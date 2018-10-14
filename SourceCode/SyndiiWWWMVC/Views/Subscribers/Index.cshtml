@@ -1,0 +1,119 @@
+﻿@*@model IEnumerable<SyndiiWWWMVC.Models.Subscriber>*@
+@model PaginatedList<SyndiiWWWMVC.Models.Subscriber>
+
+@{
+    ViewBag.Title = "Subscriber List";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<!-- NAVIGATION START -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img class="navbar-brand" name="syndiiLogo" alt="syndii logo" src="~/images/syndii-logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <div class="nav-item nav-link text-uppercase">@Html.ActionLink("HOME", "Index", "Home")</div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container subscribe" style="min-height:70vh;">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-12 spacer">
+            <h2 class="text-center spacer">@ViewData["Title"]</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center spacer">
+                <a asp-action="Create">Add New Subscriber</a>
+            </h3>
+            <form asp-action="Index" method="get">
+                <div class="form-actions no-color">
+                    <p class="text-center">
+                        @ViewData["sizePage"]
+                        Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+                        <input type="submit" value="Search" class="btn btn-contact btn-default" />
+                        
+                        &emsp;&emsp;&emsp;
+
+                        Change records per page: <input type="text" name="SizePage" value="@ViewData["currentSizePage"]" />
+                        <input type="submit" value="Change Page" class="btn btn-contact  btn-default" />
+                    </p>
+                    <p class="text-right">
+                        <a asp-action="Index">Back to Full List</a>
+                    </p>  
+                </div>
+            </form>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <a asp-action="Index" asp-route-sortOrder="@ViewData["EmailSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Email</a>
+                        </th>
+                        <th>
+                            <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Date Added</a>
+                        </th>
+                        <th>
+                            <a asp-action="Index" asp-route-sortOrder="@ViewData["DateRemovedSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Date Removed</a>
+                        </th>
+                        <th>
+                            IsActive?
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateAdded)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateRemoved)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsActive)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </td>
+                    </tr>
+            }
+                </tbody>
+            </table>
+            @{
+            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+            }
+
+            <a asp-action="Index"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-page="@(Model.PageIndex - 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               asp-route-currentSizePage="@ViewData["currentSizePage"]"
+               class="btn btn-default @prevDisabled">
+                Previous
+            </a>
+            <a asp-action="Index"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-page="@(Model.PageIndex + 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               asp-route-currentSizePage="@ViewData["currentSizePage"]"
+               class="btn btn-default @nextDisabled">
+                Next
+            </a>
+        </div>
+    </div>
+</div>

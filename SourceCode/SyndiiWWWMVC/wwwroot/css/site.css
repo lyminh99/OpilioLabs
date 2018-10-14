@@ -1,0 +1,355 @@
+﻿body {
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+}
+
+header, footer {
+    color: white;
+    background-color: black;
+}
+
+section {
+    padding: 10px;
+    min-height: 50vh;
+    margin: 0em;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+/* HEADER STYLES */
+
+h1, h2, h3 {
+    font-family: 'Patua One', serif;
+}
+
+h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* LINK STYLES */
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    color: rgb(236, 236, 236);
+}
+
+a:hover {
+    color: #3eaddf;
+}
+
+a:active {
+    color: #96b849;
+}
+
+/* NAV CLASS STYLES */
+
+.anchor {
+    display: block;
+    position: relative;
+    top: -90px; /* height of top nav bar */
+    visibility: hidden;
+}
+
+/* This is for the three line toggler that appears at smaller screen sizes */
+.custom-toggler.navbar-toggler {
+    border-color: white;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar {
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .7);
+}
+
+.scrolled {
+    background: black;
+    transition: 0.3s;
+}
+
+.navbar-brand {
+    height: 60px;
+    padding-top: 0;
+}
+
+.btn-sign-up {
+    background: #96b849;
+    color: white;
+}
+
+.gutter {
+    padding: 2em 0em;
+}
+
+.spacer {
+    padding: 25px 0;
+}
+
+/* SECTION 1 STYLE */
+
+.above-the-fold {
+    background: #000 url("../images/kitchen.jpg") no-repeat left top;
+    background-size: cover;
+    height: 90vh;
+    color: white;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -16px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #3eaddf;
+    background-size: 14px auto;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+    .scroll-down:before {
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        transform: rotate(-45deg);
+        display: block;
+        width: 20px;
+        height: 20px;
+        content: "";
+        border: 2px solid #3eaddf;
+        border-width: 0px 0 2px 2px;
+    }
+
+.peace-of-mind {
+    background: rgba(0, 0, 0, .7);
+    padding: 2.5em 0;
+}
+
+/* SECTION 2 STYLE */
+
+.triangle-down {
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid #3eaddf;
+}
+
+/* SECTION 3 STYLE */
+
+.risk-factor {
+    padding: 0;
+}
+
+.risk-img {
+    padding: 20px 0;
+}
+
+.assessment-form {
+    background: white;
+    height: 100%;
+    color: black;
+    padding: 1rem;
+    border: 2px #3eaddf solid;
+    font-size: .9em;
+}
+
+.btn-risk-submit {
+    background: #3eaddf;
+    color: white;
+}
+
+/* MISC SECTION STYLES */
+
+.blue-white {
+    background: #3eaddf;
+    color: white;
+}
+
+.white-blue {
+    background: white;
+    color: #3eaddf;
+}
+
+.green-white {
+    background: #96b849;
+    color: white;
+}
+
+/* PARTNERS STYLES */
+
+.partner-list a {
+    color: black;
+}
+
+    .partner-list a:hover {
+        color: #3eaddf;
+    }
+
+    .partner-list a:active {
+        color: #96b849;
+    }
+
+.partner-list p {
+    text-align: center;
+}
+
+.partner-list img {
+    margin: 10px;
+}
+
+/* FOOTER STYLES */
+
+footer {
+    width: 100%;
+}
+
+.footer {
+    background-color: #292c2f;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 55px 50px;
+    margin-top: 40px;
+}
+
+    .footer p {
+        opacity: 0.7;
+    }
+
+    .footer .footer-nav,
+    .footer .footer-logo,
+    .footer .footer-social {
+        padding: 1rem 0;
+    }
+
+        .footer .footer-nav,
+        .footer .footer-logo,
+        .footer .footer-social p {
+            text-align: center;
+        }
+
+.social-media-icons {
+    font-size: 2em;
+}
+
+    .social-media-icons li {
+        padding: 5px;
+    }
+
+/* CONTACT & SUBSCRIBE FORMS */
+
+.btn-contact {
+    color: white;
+    background: #3eaddf;
+}
+
+address a:link {
+    color: #3eaddf;
+}
+
+address a:hover {
+    color: #96b849
+}
+
+.sign-up a {
+    text-decoration: underline;
+}
+.sign-up a:hover {
+    color: #292c2f;
+}
+
+.subscribe a {
+    color: #3eaddf;
+}
+
+.subscribe a:hover {
+    color: #96b849;
+}
+
+/* MEDIA QUERIES */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .risk-img {
+        padding: 0;
+    }
+
+    .risk-factor {
+        padding: 2rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    .social-media-icons {
+        font-size: 3em;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    .risk-factor {
+        padding: 2.5rem;
+    }
+
+    .footer .footer-social p {
+        text-align: right;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 5em;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+}
+
+/* FOR WIDGETS WITH BROKEN PADDING LIKE Google Maps OR Google Custom Search Engine USE
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+*/

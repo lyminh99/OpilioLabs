@@ -1,0 +1,54 @@
+﻿@model SyndiiWWWMVC.Models.Subscriber
+
+@{
+    ViewBag.Title = "Administrator Login";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<!-- NAVIGATION START -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img class="navbar-brand" name="syndiiLogo" alt="syndii logo" src="~/images/syndii-logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <div class="nav-item nav-link text-uppercase">@Html.ActionLink("HOME", "Index", "Home")</div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container subscribe" style="min-height:70vh;">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-12 spacer">
+            <h2 class="text-center spacer">@ViewData["Title"]</h2>
+            <p class="text-center">This is the login page for syndii&trade; web administrators. If you are not an administrator, please return to the homepage by clicking <a href="@Url.Action("Index", "Home")">this link</a>.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-12">
+            <form asp-action="Login" method="post">
+                <div class="form-group row">
+                    <label for="userName" class="col-sm-2 col-form-label">Username</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="userName" name="userName" placeholder="Username" value="@ViewData["userName"]" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="password" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" name="password" value="@ViewData["password"]" />
+                    </div>
+                </div>
+                <input type="submit" value="Sign in" class="btn btn-contact btn-default" />
+            </form>
+        </div>
+    </div>
+
+    <div class="text-right gutter">
+        <a asp-action="Index">Click to Return</a>
+    </div>
+</div>

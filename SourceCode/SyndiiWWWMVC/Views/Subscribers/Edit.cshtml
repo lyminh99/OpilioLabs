@@ -1,0 +1,67 @@
+﻿@model SyndiiWWWMVC.Models.Subscriber
+
+@{
+    ViewBag.Title = "Edit Subscriber";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<!-- NAVIGATION START -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img class="navbar-brand" name="syndiiLogo" alt="syndii logo" src="~/images/syndii-logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <div class="nav-item nav-link text-uppercase">@Html.ActionLink("HOME", "Index", "Home")</div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container subscribe" style="min-height:70vh;">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-12 spacer">
+            <h2 class="text-center spacer">@ViewData["Title"]</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ID" />
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateAdded" class="control-label"></label>
+                    <input asp-for="DateAdded" class="form-control" />
+                    <span asp-validation-for="DateAdded" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateRemoved" class="control-label"></label>
+                    <input asp-for="DateRemoved" class="form-control" />
+                    <span asp-validation-for="DateRemoved" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-contact btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

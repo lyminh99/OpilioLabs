@@ -1,0 +1,65 @@
+﻿@model SyndiiWWWMVC.Models.Subscriber
+
+@{
+    ViewBag.Title = "Subscriber Details";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<!-- NAVIGATION START -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img class="navbar-brand" name="syndiiLogo" alt="syndii logo" src="~/images/syndii-logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <div class="nav-item nav-link text-uppercase">@Html.ActionLink("HOME", "Index", "Home")</div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container subscribe" style="min-height:70vh;">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 spacer">
+            <h2 class="text-center spacer">@ViewData["Title"]</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-12">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateAdded)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DateAdded)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateRemoved)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DateRemoved)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.IsActive)
+                </dd>
+            </dl>
+            <div>
+ 
+                <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> | 
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

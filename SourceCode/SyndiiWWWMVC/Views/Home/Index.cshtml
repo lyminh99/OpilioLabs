@@ -1,0 +1,330 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+@model SyndiiWWWMVC.Models.Subscriber
+<!-- NAVIGATION START -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img class="navbar-brand" name="syndiiLogo" alt="syndii logo" src="~/images/syndii-logo.png" /></a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link text-uppercase" href="#how-it-works">How It Works</a>
+                <a class="nav-item nav-link text-uppercase" href="#the-damage">The Damage</a>
+                <a class="nav-item nav-link text-uppercase" href="#risk-assessment">Risk Assessment</a>
+                <a class="nav-item nav-link text-uppercase" href="#who-are-we">Who Are We</a>
+                <div class="nav-item nav-link text-uppercase">@Html.ActionLink("CONTACT US", "Contact", "Home")</div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ABOVE THE FOLD -->
+<div class="above-the-fold">
+    <table style="height: 90vh; width: 100%;">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="peace-of-mind">
+                        <h1 class="text-center">Peace of Mind</h1>
+                        <p class="lead container">syndii&trade; is an easy-to-use connected device that can protect your home from costly damage that may result from power outages, water leaks, and temperature extremes.</p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#how-it-works" class="scroll-down" address="true"></a>
+</div>
+
+<!-- SECTION 1: How it Works -->
+<section class="blue-white gutter" name="how-it-works">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a id="how-it-works" class="anchor"></a>
+                <h2 class="text-center spacer">Simplicity</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5 class="text-center">Easy to install, no tools required.</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="text-center gutter">
+                    <img src="./images/icons/plug.png" alt="monitors instantly" />
+                </div>
+                <h6 class="text-center">Plug-in</h6>
+                <p class="text-center">syndii&trade; instantly begins monitoring your home for power outages and temperature changes.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="text-center gutter">
+                    <img src="./images/icons/wifi.png" alt="wi-fi capability" />
+                </div>
+                <h6 class="text-center">Place</h6>
+                <p class="text-center">Place your syndii&trade; wireless sensors in the areas that you want to protect.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="text-center gutter">
+                    <img src="./images/icons/gear.png" alt="phone alerts" />
+                </div>
+                <h6 class="text-center">Personalize</h6>
+                <p class="text-center">Choose the alerts you want to receive and where you want to receive them.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="triangle-down"></div>
+
+<!-- SECTION 2: The Video-->
+<div class="white-blue gutter">
+    <div class="container">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/a_or5f59A04" allowfullscreen></iframe>
+        </div>
+        <br />
+        <p class="text-center">
+            Click &#9654; to play a quick "how to" video
+        </p>
+    </div>
+</div>
+
+<!-- SECTION 3: The Damage -->
+<div class="blue-white gutter" name="the-damage">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a id="the-damage" class="anchor"></a>
+                <h2 class="text-center spacer">Your Home is at Risk!</h2>
+            </div>
+        </div>
+        <div class="row risk-factor align-items-center">
+            <div class="col-lg-2 offset-lg-2 col-md-2 offset-md-2 col-sm-3 col-12 text-center">
+                <img class="img-fluid risk-img" src="./images/icons/water.png" alt="Water Damage" />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-9 col-12">
+                <p>An 1/8" hole in a pipe can leak over 40 litres of water per hour!</p>
+                <p class="text-right"><em>&mdash;Angie's List</em></p>
+            </div>
+        </div>
+        <div class="row risk-factor align-items-center">
+            <div class="col-lg-6 offset-lg-2 col-md-6 offset-md-2 col-sm-9 col-12">
+                <p>The average claim for water damage from frozen pipes is about $15,000.</p>
+                <p class="text-right"><em>&mdash;State Farm Insurance</em></p>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-12 text-center order-sm-last order-first">
+                <img class="img-fluid risk-img" src="./images/icons/temperature.png" alt="High Temperature" />
+            </div>
+        </div>
+        <div class="row risk-factor align-items-center">
+            <div class="col-lg-2 offset-lg-2 col-md-2 offset-md-2 col-sm-3 col-12 text-center">
+                <img class="img-fluid risk-img" src="./images/icons/plug.png" alt="No Power" />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-9 col-12">
+                <p>Food in your fridge will begin to spoil as quickly as 4 hours into a power outage.</p>
+                <p class="text-right"><em>&mdash;Food and Drug Administration</em></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 3: Risk Assessment -->
+<div class="green-white gutter" name="risk-assessment">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 offset-lg-1 col-md-8 offset-md-2 col-12">
+                <a id="risk-assessment" class="anchor"></a>
+                <h2 class="text-center spacer">Assess Your Risk</h2>
+                <p>How safe do you think your home away from home&mdash;and you&mdash;are from costly water damage? There are many factors that could raise the cost of your insurance after damage, such as:</p>
+                <ul>
+                    <li>Number of properties</li>
+                    <li>Amount of time spent away</li>
+                    <li>Where your property is built</li>
+                </ul>
+                <p>See how at risk you are by filling out our quick survey!</p>
+            </div>
+            <div id="assessment" class="col-xl-5 col-lg-5 offset-lg-0 col-md-8 offset-md-2 col-12">
+                <form class="assessment-form">
+                    <div class="col-12">
+                        <label class="mr-sm-2" for="inlineFormCustomSelect">How many properties do you own?</label>
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two to five</option>
+                            <option value="3">More than five</option>
+                        </select>
+                    </div>
+                    <br />
+                    <div class="col-12">
+                        <label class="mr-sm-2" for="inlineFormCustomSelect">How long do you typically leave your properties unoccupied?</label>
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                            <option selected>Choose...</option>
+                            <option value="1">Never</option>
+                            <option value="2">Less than one month at a time</option>
+                            <option value="3">2-6 months at a time</option>
+                            <option value="4">Over 6 months at a time</option>
+                        </select>
+                    </div>
+                    <br />
+                    <div class="col-12">
+                        <label class="mr-sm-2">Have you ever had an incident involving water damage occur at your property?</label>
+                    </div>
+                    <div class="row">
+                        <div class="offset-1 col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="previousdamage" id="rdoYes" value="Yes">
+                                <label class="form-check-label" for="rdoYes">Yes</label>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="col-6 form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="previousdamage" id="rdoNo" value="No">
+                                <label class="form-check-label" for="rdoNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="col-12">
+                        <label class="mr-sm-2">Do you currently own insurance that covers incidents involving water damage?</label>
+                    </div>
+                    <div class="row">
+                        <div class="offset-1 col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="insurance" id="rdoInsYes" value="Yes">
+                                <label class="form-check-label" for="rdoInsYes">Yes</label>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="col-6 form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="insurance" id="rdoInsNo" value="No">
+                                <label class="form-check-label" for="rdoInsNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-block btn-risk-submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 4: Who Are We -->
+<div class="blue-white gutter" name="who-are-we">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-6 col-12">
+                <table style="height: 100%; width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img class="img-fluid" src="./images/elliott-temp.jpg" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xl-5 col-lg-6 col-12">
+                <table style="height: 100%; width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a id="who-are-we" class="anchor"></a>
+                                <h2 class="text-center spacer">Who Are We?</h2>
+                                <p>syndii&trade; was built by Elliott, cottage owner and engineer, who worried about unseen environmental disasters when he was away from his property, with no easy, reliable solution to solve it.</p>
+                                <p>He had friends and family that felt the same way, so he set out to do something about it, something any home owner could easily do.</p>
+                                <p>Do you wish to learn more, or just stay in the loop? Sign up for our mailing list!</p>
+
+                                <form asp-action="../Subscribers/Subscribe" class="sign-up">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="input-group mb-3">
+                                        <input asp-for="Email" type="text" id="emailValidate" placeholder="Enter your email" class="form-control" required>
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                        <div class="input-group-append">
+                                            <input class="btn btn-sign-up" value="Submit" type="submit" />
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <input asp-for="TermsAndConditions" type="checkbox" class="form-check-input" id="opt-in" required />
+                                        <label class="form-check-label" for="opt-in"><small>I have read the <a href="@Url.Action("Terms", "Home")" target="_blank">terms of use</a> and <a href="@Url.Action("Privacy", "Home")" target="_blank">privacy policy</a> and would like to subscribe to the syndii&trade; mailing list</small></label>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 5: Partners -->
+<div class="white-blue gutter" name="partners">
+    <div class="container">
+        <div class="row">
+            <h2 class="col-12 text-center spacer">In Collaboration With</h2>
+        </div>
+        <div class="partner-list row align-items-center">
+            <div class="col-md-4 col-sm-5 order-1">
+                <a href="https://durhamcollege.ca/">
+                    <p class="d-sm-none d-block">Durham College</p>
+                    <img class="img-fluid d-sm-block d-none" src="./images/partners/partner_durhamcollege.png" alt="Durham College" />
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-5 order-md-2 order-sm-3 order-2">
+                <a href="https://uoit.ca/">
+                    <p class="d-sm-none d-block">University of Ontario</p>
+                    <img class="img-fluid d-sm-block d-none" src="./images/partners/partner_uoit.png" alt="UOIT" />
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 order-md-3 order-sm-4 order-3">
+                <a href="http://www.senecacollege.ca/home.html">
+                    <p class="d-sm-none d-block">Seneca College</p><img class="img-fluid d-sm-block d-none" src="./images/partners/partner_seneca.png" alt="Seneca College" />
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-6 order-md-4 order-sm-5 order-4">
+                <a href="https://www.georgiancollege.ca/">
+                    <p class="d-sm-none d-block">Georgian College</p>
+                    <img class="img-fluid d-sm-block d-none" src="./images/partners/partner_georgian.png" alt="Georgian College" />
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-6 order-md-5 order-sm-6 order-5">
+                <a href="https://www.nrc-cnrc.gc.ca/eng/">
+                    <p class="d-sm-none d-block">National Research Council Canada</p>
+                    <img class="img-fluid d-sm-block d-none" src="./images/partners/partner_nrc.png" alt="NRC CNRC" />
+                </a>
+            </div>
+            <div class="col-md-5 col-sm-6 order-md-6 order-sm-7 order-6">
+                <a href="http://www.oce-ontario.org/">
+                    <p class="d-sm-none d-block">Ontario Centres of Excellence</p>
+                    <img class="img-fluid d-sm-block d-none" src="./images/partners/partner_oce.png" alt="Ontario Centres of Excellence" />
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-2 order-md-7 order-sm-2 order-7">
+                <a href="https://venturelab.ca/">
+                    <p class="d-sm-none d-block">Venture Lab</p>
+                    <img class="img-fluid d-sm-block d-none" src="./images/partners/partner_venturelab.png" alt="Venture Lab" />
+                </a>
+            </div>
+            <div class="col-md-5 col-sm-6 offset-md-0 offset-sm-3 order-8">
+                <a href="http://www.sparkcentre.org/">
+                    <p class="d-sm-none d-block">Spark Centre</p>
+                    <img class="img-fluid d-sm-block d-none" src="./images/partners/partner_spark.png" alt="Spark Centre" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function ReplaceContentInContainer(assessment, content) {
+        var container = document.getElementById(assessment);
+        container.innerHTML = content;
+    }
+</script>

@@ -1,0 +1,81 @@
+﻿@model SyndiiWWWMVC.Models.Subscriber
+
+@{
+    ViewBag.Title = "Subscribe";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img class="navbar-brand" name="syndiiLogo" alt="syndii logo" src="~/images/syndii-logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <div class="nav-item nav-link text-uppercase">@Html.ActionLink("HOME", "Index", "Home")</div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="min-height:70vh;">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12">
+            <h2 class="text-center spacer">@ViewData["Title"]</h2>
+            <p class="text-center">Enter your email below to subscribe to syndii&trade;'s mailing list and begin receiving updates about our product.</p>
+        </div>
+    </div>
+            <form asp-action="../Subscribers/Subscribe" class="subscribe">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" aria-describedby="emailHelp" class="form-control" />
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConfirmEmail" class="control-label">Confirm Email</label>
+                    <input asp-for="ConfirmEmail" class="form-control" />
+                    <span asp-validation-for="ConfirmEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="TermsAndConditions" required /> <small>I have read the <a href="@Url.Action("Terms", "Home")" target="_blank">terms of use</a> and <a href="@Url.Action("Privacy", "Home")" target="_blank">privacy policy</a> and would like to subscribe to the syndii&trade; mailing list</small>
+                            <span asp-validation-for="TermsAndConditions" class="text-danger"></span>
+                        </label>
+                    </div>
+                </div>
+                <!--<a href="/">Remove it for test</a>
+                <div class="form-group">
+                    <label asp-for="DateAdded" class="control-label"></label>
+                    <input asp-for="DateAdded" class="form-control" />
+                    <span asp-validation-for="DateAdded" class="text-danger"></span>
+                </div>
+                <!--<a href="/">Remove it for test</a>
+
+                <div class="form-group">
+                    <label asp-for="DateRemoved" class="control-label"></label>
+                    <input asp-for="DateRemoved" class="form-control" />
+                    <span asp-validation-for="DateRemoved" class="text-danger"></span>
+                </div>
+
+                -->
+                @*<div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                            </label>
+                        </div>
+                    </div>*@
+                <div class="form-group">
+                    <input type="submit" value="Subscribe" class="btn btn-contact btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <p>
+        @ViewBag.token
+    </p>
+    </div>

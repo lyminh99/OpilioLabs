@@ -1,0 +1,65 @@
+﻿@model SyndiiWWWMVC.Models.Subscriber
+
+@{
+    ViewBag.Title = "Contact Us";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<!-- NAVIGATION START -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img class="navbar-brand" name="syndiiLogo" alt="syndii logo" src="~/images/syndii-logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <div class="nav-item nav-link text-uppercase">@Html.ActionLink("HOME", "Index", "Home")</div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="min-height:70vh;">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center spacer">@ViewData["Title"]</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 order-md-last col-12">
+            <div class="spacer"></div>
+            <address>
+                <i class="fas fa-map-marker"></i> One Microsoft Way<br />
+                &ensp;&ensp;Redmond, WA 98052-6399<br />
+                <i class="fas fa-phone"></i>
+                425.555.0100
+            </address>
+
+            <address>
+                <i class="fas fa-envelope"></i> <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
+                <i class="fas fa-envelope"></i> <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+            </address>
+        </div>
+        <div class="col-md-8 col-12">
+            <h3 class="text-center spacer">We would love to hear from you!</h3>
+            <form method="post" action='@Url.Action("Contact", "Home")'>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="text" class="form-control" name="name" placeholder="Name *" value="">
+                <br />
+                <input asp-for="Email" class="form-control" name="email" placeholder="Email *" value="">
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <br />
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="opt-in">
+                    <label class="form-check-label" for="opt-in"><small>I would like to subscribe to syndii&trade; email updates (You can opt out at any time)</small></label>
+                </div>
+                <br />
+                <textarea class="form-control" rows="5" name="comment" placeholder="How can we help you?"></textarea>
+                <br />
+                <input type="submit" value="Submit" class="btn btn-contact btn-block">
+            </form>
+        </div>
+    </div>
+</div>
+

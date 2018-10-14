@@ -1,0 +1,32 @@
+﻿@model SyndiiWWWMVC.Models.Subscriber
+
+@{
+    ViewBag.Title = "Thank You";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img class="navbar-brand" name="syndiiLogo" alt="syndii logo" src="~/images/syndii-logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <div class="nav-item nav-link text-uppercase">@Html.ActionLink("HOME", "Index", "Home")</div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container text-center" style="min-height:70vh;">
+    <div class="row gutter">
+        <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12 subscribe">
+            <h2 class="spacer">Thank you for subscription</h2>
+            <p>If you didn't mean to sign-up for our mailing list, you can <a href="@ViewBag.token">click here</a> to unsubscribe. </p>
+        </div>
+    </div>
+</div>
+
+    
+
